@@ -1,21 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {TuiButtonModule,
-  TuiDialogModule, 
+  TuiDialogModule,
   TuiRootModule} from '@taiga-ui/core';
-import {TuiTabsModule} from '@taiga-ui/kit';
+import {TuiTabsModule,
+  TuiInputModule,
+  TuiTextAreaModule} from '@taiga-ui/kit';
+  import {TuiTextfieldControllerModule} from '@taiga-ui/core';
 import { AppComponent } from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
+import { DialogWindowComponent } from './components/dialog-window/dialog-window.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogWindowComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    TuiRootModule,
     TuiButtonModule,
     TuiTabsModule,
-    TuiDialogModule, 
-    TuiRootModule
+    TuiDialogModule,
+    TuiInputModule,
+    ReactiveFormsModule,
+    TuiTextfieldControllerModule,
+    TuiTextAreaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

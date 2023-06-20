@@ -1,29 +1,8 @@
 .page{
     display: flex;
     flex-direction: column;
-    
+
 }
-
-// @media (max-width: 1200px){
-//     .content{
-//         max-width: 970px;
-//     }
-//     .title{
-//         background-size:auto;
-//     }
-// }
-
-// @media (max-width: 992px){
-//     .content{
-//         max-width: 750px;
-//     }
-// }
-
-// @media (max-width: 767px){
-//     .content{
-//         max-width: none;
-//     }
-// }
 
 .header{
     display: flex;
@@ -41,6 +20,9 @@
 
 tui-tabs{
     box-shadow: none;
+    ::ng-deep.t-underline{
+      box-shadow: none;
+    }
 }
 
 .w{
@@ -82,7 +64,7 @@ tui-tabs{
     display: flex;
     flex-direction: column;
     margin-left: 30px;
-    
+
 }
 
 .t-1{
@@ -123,7 +105,7 @@ tui-tabs{
     flex-direction: column;
     align-self: center;
     align-items: center;
-    padding: 72px 30px 0px 30px;
+    padding: 72px 30px 70px 30px;
 }
 
 .t-cat{
@@ -147,6 +129,7 @@ tui-tabs{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
     width: 20%;
 }
 
@@ -212,7 +195,7 @@ tui-tabs{
     align-items: center;
     flex-direction: column;
     width: 50%;
-    
+
 }
 .about-image-l{
     width: 68%;
@@ -220,7 +203,7 @@ tui-tabs{
 }
 
 .about-image-r{
-    
+
     height: 80%;
 }
 
@@ -253,7 +236,7 @@ tui-tabs{
     align-items: center;
     padding: 31px 58px 25px 58px;
     background-color: #FFF2F3;
-    
+
 }
 
 .service-item-img{
@@ -291,7 +274,7 @@ tui-tabs{
     width: 28%;
     background: rgb(255, 242, 243);
     display: flex;
-    
+
     flex-flow: column nowrap;
     -webkit-box-pack: justify;
     justify-content:center;
@@ -312,12 +295,12 @@ tui-tabs{
 
 .text-del{
     margin-top: 27px;
-    
+
 }
 
 .text-del-2{
     margin-top: 27px;
-    
+
 }
 
 .pay-item{
@@ -381,4 +364,20 @@ tui-tabs{
 .c-bttn{
     --tui-primary: #BC8587;
     border-radius: 50px;
+}
+
+// tui-dialog-host{
+//   ::ng-deep
+// }
+
+.div-template{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-order{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

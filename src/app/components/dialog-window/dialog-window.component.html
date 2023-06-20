@@ -1,0 +1,37 @@
+<div class="div-template">
+  <span>Номер платья #{{numberItem}}</span>
+  <span>Стоимость платья {{price}} р.</span>
+  <form class="form-order">
+    <tui-input
+      tuiTextfieldSize="m"
+      formControlName="testValue"
+      [tuiTextfieldLabelOutside]="true"
+  >
+      Введите почту
+      <input
+          tuiTextfield
+          type="email"
+      />
+  </tui-input>
+  <tui-input
+      tuiTextfieldSize="m"
+      formControlName="testValue"
+      [tuiTextfieldLabelOutside]="true"
+  >
+      Введите номер телефона
+      <input
+          tuiTextfield
+          type="tel"
+      />
+  </tui-input>
+  <tui-text-area
+          formControlName="testValue2"
+          [expandable]="true"
+      >
+          Описание
+      </tui-text-area>
+  </form>
+  <div style="display: flex; justify-content: end;">
+    <button tuiButton class="c-bttn">Оформить заказ</button>
+  </div>
+</div>

@@ -1,145 +1,119 @@
-<div class="page">
-  <div class="header">
-    <div class="head">
-      <div class="social">
-        <img/>
+<tui-root>
+  <div class="page">
+    <div class="header">
+      <div class="head">
+        <!-- <div class="social">
+          <img/>
+        </div> -->
+        <a>
+          <span class="w">W</span>
+          <span class="ed">eddingday</span>
+        </a>
+        <!-- <button tuiButton appearance="outline">Оставить заявку</button> -->
       </div>
-      <a>
-        <span class="w">W</span>
-        <span class="ed">eddingday</span>
-      </a>
-      <button tuiButton appearance="outline" (click)="showDialogCretaeOrder()">Оставить заявку</button>
-    </div>
-    <div class="br"></div>
-    <div class="nav">
-      <tui-tabs>
-        <a tuiTab>О салоне</a>
-        <a tuiTab>Каталог</a>
-        <a tuiTab>Услуги</a>
-        <a tuiTab>Отзывы</a>
-        <a tuiTab>Доставка и оплата</a>
-        <a tuiTab>Контакты</a>
-      </tui-tabs>
-    </div>
-  </div>
-  <div class="content">
-    <div class="title">
-      <div class="inf-t">
-        <span class="t-1">Свадебный салон</span>
-        <span class="t-2">weddingday</span>
-        <span class="t-3">Cвадебные платья от 5000 рублей</span>
-        <button tuiButton class="o-bttn">В каталог</button>
+      <div class="br"></div>
+      <div class="nav">
+        <tui-tabs>
+          <a tuiTab href="#about">О салоне</a>
+          <a tuiTab href="#catalog">Каталог</a>
+          <a tuiTab href="#service">Услуги</a>
+          <!-- <a tuiTab href="">Отзывы</a> -->
+          <a tuiTab href="#pay_del">Доставка и оплата</a>
+          <a tuiTab href="#contacts">Контакты</a>
+        </tui-tabs>
       </div>
     </div>
-    
-    <div class="about">
-      <div class="about-l">
-        <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
-        <span class="t-ab">О НАС</span>
-        <span class="about-t">
-          Подробнее ознакомившись с нашим каталогом, 
-          вы поймете, что без покупки от нас вы не уйдете!
-        </span>
-        <img class="about-image-l" src="../assets/images/wd_about_l.svg"/>
-      </div>
-      <div class="about-r">
-        <img class="about-image-r" src="../assets/images/wb_about_r.svg"/>
-        <span class="about-t-r">Наши консультанты позаботятся о правильности вашего выбора, 
-          подобрав нужный размер свадебного платья. 
-          На сайте удобно отбирать понравившиеся модели для примерки. 
-          После записи на бесплатную примерку, 
-          консультанты подготовят все выбранные модели
-        </span>
-      </div>
-    </div>
-    <div class="br"></div>
-    <div class="catalog" >
-      <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
-      <span class="t-cat">каталог</span>
-      <div class="items">
-        <div class="catalog-item" *ngFor="let item of catalogItems">
-          <img class="item-img" src="{{item.img}}"/>
-          <span>Свадебное платье #{{item.number}}</span>
-          <span>{{item.price}} рублей</span>
-          <button tuiButton class="c-bttn" >Заказать</button>
-        </div>
-        
-      </div>
-      
-    </div>
-    <div class="br"></div>
-    <div class="services">
-      <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
-      <span class="t-u">Услуги</span>
-      <div class="s-d">
-        <div class="services-item" *ngFor="let item of serviceItems"> 
-          <img class="service-item-img" src="{{item.img}}"/>
-          <span class="service-item-t">{{item.title}}</span>
+    <div class="content">
+      <div class="title">
+        <div class="inf-t">
+          <span class="t-1">Свадебный салон</span>
+          <span class="t-2">weddingday</span>
+          <span class="t-3">Cвадебные платья от 5000 рублей</span>
+          <button tuiButton class="o-bttn" onclick="location.href = '#catalog'">В каталог</button>
         </div>
       </div>
-    </div>
-    <div class="br"></div>
-    <div class="pay_delivery">
-      <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
-      <span class="pay-t">Доставка и оплата</span>
-      <div class="pay-item">
-        <div class="delivery">
-          <img class="img-pay" src="../assets/icons/pay_item_1.png"/>
-          <span class="title-del">
-            Заказы на доставку принимаются каждый день с 10:00 до 22:00
+
+      <div class="about" id="about">
+        <div class="about-l">
+          <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
+          <span class="t-ab">О НАС</span>
+          <span class="about-t">
+            Подробнее ознакомившись с нашим каталогом,
+            вы поймете, что без покупки от нас вы не уйдете!
           </span>
-          <span class="text-del">
-            Мы доставляем платья по всей России. 
-            Вы выбираете понравившееся платье на сайте и 
-            в указанную дату получаете его по выбранному адресу.</span>
-            <span class="text-del-2">Цена услуги: в пределах Москвы — 1200 руб.
-              по Московской обл. — 2000 руб.
-              по России — 2500 руб.</span>
+          <img class="about-image-l" src="../assets/images/wd_about_l.svg"/>
         </div>
-        <div class="pay">
-          <img class="img-pay" src="../assets/icons/pay_item_2.png"/>
-          <span class="title-del">Вы можете оплатить заказ картами или наличными в свлоне или при доставке</span>
-          <span class="text-del-2">Расплатиться можно наличными или банковской картой</span>
-          <span class="text-del-2">Оплата банковскими картами осуществляется через АО «АЛЬФА-БАНК», ПАО СБЕРБАНК и «Тинькофф».</span>
-          <span class="text-del-2">К оплате принимаются карты VISA, MasterCard, МИР.</span>
+        <div class="about-r">
+          <img class="about-image-r" src="../assets/images/wb_about_r.svg"/>
+          <span class="about-t-r">Наши консультанты позаботятся о правильности вашего выбора,
+            подобрав нужный размер свадебного платья.
+            На сайте удобно отбирать понравившиеся модели для примерки.
+            После записи на бесплатную примерку,
+            консультанты подготовят все выбранные модели
+          </span>
+        </div>
+      </div>
+      <div class="br"></div>
+      <div class="catalog" id="catalog">
+        <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
+        <span class="t-cat">каталог</span>
+        <div class="items">
+          <div class="catalog-item" *ngFor="let item of catalogItems">
+            <img class="item-img" src="{{item.img}}"/>
+            <span>Свадебное платье #{{item.number}}</span>
+            <span>{{item.price}} рублей</span>
+            <button tuiButton class="c-bttn" (click)="showDialogCretaeOrder(item)">Заказать</button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="br"></div>
+      <div class="services" id="service">
+        <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
+        <span class="t-u">Услуги</span>
+        <div class="s-d">
+          <div class="services-item" *ngFor="let item of serviceItems">
+            <img class="service-item-img" src="{{item.img}}"/>
+            <span class="service-item-t">{{item.title}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="br"></div>
+      <div class="pay_delivery" id="pay_del">
+        <img class="about-icon" src="../assets/icons/wd_branch.svg"/>
+        <span class="pay-t">Доставка и оплата</span>
+        <div class="pay-item">
+          <div class="delivery">
+            <img class="img-pay" src="../assets/icons/pay_item_1.png"/>
+            <span class="title-del">
+              Заказы на доставку принимаются каждый день с 10:00 до 22:00
+            </span>
+            <span class="text-del">
+              Мы доставляем платья по всей России.
+              Вы выбираете понравившееся платье на сайте и
+              в указанную дату получаете его по выбранному адресу.</span>
+              <span class="text-del-2">Цена услуги: в пределах Москвы — 1200 руб.
+                по Московской обл. — 2000 руб.
+                по России — 2500 руб.</span>
+          </div>
+          <div class="pay">
+            <img class="img-pay" src="../assets/icons/pay_item_2.png"/>
+            <span class="title-del">Вы можете оплатить заказ картами или наличными в свлоне или при доставке</span>
+            <span class="text-del-2">Расплатиться можно наличными или банковской картой</span>
+            <span class="text-del-2">Оплата банковскими картами осуществляется через АО «АЛЬФА-БАНК», ПАО СБЕРБАНК и «Тинькофф».</span>
+            <span class="text-del-2">К оплате принимаются карты VISA, MasterCard, МИР.</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-    <span class="t-c">Контакты</span>
-    <div class="f-d">
-      <span class="f-d-t"> +1(311)-45-67-890</span>
-      <span class="f-d-t">г. Иваново, ул. Пушкина, домю 32</span>
-      <span class="f-d-t">wend@mail.ru</span>
+    <div class="footer" id="contacts">
+      <span class="t-c">Контакты</span>
+      <div class="f-d">
+        <span class="f-d-t"> +1(311)-45-67-890</span>
+        <span class="f-d-t">г. Иваново, ул. Пушкина, домю 32</span>
+        <span class="f-d-t">wend@mail.ru</span>
+      </div>
     </div>
   </div>
-</div>
-<ng-template
-    #template
-    let-observer
->
-    <p>You can show a dialog with template</p>
-    <p>
-        Your balance:
-        
-    </p>
-    <button
-        tuiButton
-        type="button"
-        size="m"
-        class="tui-space_right-3"
-        (click)="withdraw()"
-    >
-        Withdraw&nbsp;
-       
-    </button>
-    <button
-        tuiButton
-        type="button"
-        size="m"
-        (click)="observer.complete()"
-    >
-        Cancel
-    </button>
-</ng-template>
+</tui-root>

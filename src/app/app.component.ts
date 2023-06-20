@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, Inject, Injector} from '@angular/core';
 import {TuiDialogContext, TuiDialogService} from '@taiga-ui/core';
-import {PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import { DialogWindowComponent } from './components/dialog-window/dialog-window.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ export class AppComponent implements OnInit{
 
   money = 1000;
 
-  constructor(@Inject(TuiDialogService) private readonly dialogs: TuiDialogService) {}
+  constructor(
+    @Inject(TuiDialogService) private readonly dialogs: TuiDialogService,
+    @Inject(Injector) private readonly injector: Injector,
+    ) {}
 
   ngOnInit(): void {
     this.catalogItems = [
@@ -81,8 +85,18 @@ export class AppComponent implements OnInit{
     ]
   }
 
-  showDialogCretaeOrder(){
-    this.dialogs.open("Hello").subscribe();
+  showDialogCretaeOrder(item:any){
+    let dialog = this.dialogs.open<any>(
+      new PolymorpheusComponent(DialogWindowComponent, this.injector),
+      {
+        data:{
+          item: item
+        },
+        dismissible: true,
+        size: 'auto',
+      }
+    )
+    dialog.subscribe()
   }
 
   withdraw(): void {

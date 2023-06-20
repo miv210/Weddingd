@@ -1,0 +1,17 @@
+.div-template{
+  display: flex;
+  width: 27vw;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-order{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-bttn{
+  --tui-primary: #BC8587;
+  border-radius: 50px;
+}
