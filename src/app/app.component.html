@@ -8,7 +8,7 @@
         <span class="w">W</span>
         <span class="ed">eddingday</span>
       </a>
-      <button tuiButton appearance="outline">Оставить заявку</button>
+      <button tuiButton appearance="outline" (click)="showDialogCretaeOrder()">Оставить заявку</button>
     </div>
     <div class="br"></div>
     <div class="nav">
@@ -28,7 +28,7 @@
         <span class="t-1">Свадебный салон</span>
         <span class="t-2">weddingday</span>
         <span class="t-3">Cвадебные платья от 5000 рублей</span>
-        <button tuiButton>В каталог</button>
+        <button tuiButton class="o-bttn">В каталог</button>
       </div>
     </div>
     
@@ -61,8 +61,9 @@
           <img class="item-img" src="{{item.img}}"/>
           <span>Свадебное платье #{{item.number}}</span>
           <span>{{item.price}} рублей</span>
-          <button tuiButton>Заказать</button>
+          <button tuiButton class="c-bttn" >Заказать</button>
         </div>
+        
       </div>
       
     </div>
@@ -112,6 +113,33 @@
       <span class="f-d-t">г. Иваново, ул. Пушкина, домю 32</span>
       <span class="f-d-t">wend@mail.ru</span>
     </div>
-
   </div>
 </div>
+<ng-template
+    #template
+    let-observer
+>
+    <p>You can show a dialog with template</p>
+    <p>
+        Your balance:
+        
+    </p>
+    <button
+        tuiButton
+        type="button"
+        size="m"
+        class="tui-space_right-3"
+        (click)="withdraw()"
+    >
+        Withdraw&nbsp;
+       
+    </button>
+    <button
+        tuiButton
+        type="button"
+        size="m"
+        (click)="observer.complete()"
+    >
+        Cancel
+    </button>
+</ng-template>

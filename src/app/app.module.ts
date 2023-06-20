@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {TuiButtonModule} from '@taiga-ui/core';
+import {TuiButtonModule,
+  TuiDialogModule, 
+  TuiRootModule} from '@taiga-ui/core';
 import {TuiTabsModule} from '@taiga-ui/kit';
 import { AppComponent } from './app.component';
 
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     TuiButtonModule,
-    TuiTabsModule
+    TuiTabsModule,
+    TuiDialogModule, 
+    TuiRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

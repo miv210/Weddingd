@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
+import {TuiDialogContext, TuiDialogService} from '@taiga-ui/core';
+import {PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,10 @@ export class AppComponent implements OnInit{
 
   catalogItems: Array<any>;
   serviceItems: Array<any>;
+
+  money = 1000;
+
+  constructor(@Inject(TuiDialogService) private readonly dialogs: TuiDialogService) {}
 
   ngOnInit(): void {
     this.catalogItems = [
@@ -74,4 +80,12 @@ export class AppComponent implements OnInit{
       },
     ]
   }
+
+  showDialogCretaeOrder(){
+    this.dialogs.open("Hello").subscribe();
+  }
+
+  withdraw(): void {
+    this.money -= 100;
+}
 }
