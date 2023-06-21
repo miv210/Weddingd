@@ -24,12 +24,23 @@ tui-tabs{
       box-shadow: none;
     }
 }
-.mobileTabs{
-  box-shadow: none;
-    ::ng-deep.t-underline{
-      box-shadow: none;
-    }
+tui-sheets-host{
+  .mobileTabs{
+    box-shadow: none;
+      ::ng-deep.t-underline{
+        box-shadow: none;
+      }
+  }
+  ._active{
+    color: var(--tui-text-02);
+  }
+  ._active::after{
+    box-shadow: none;
+    color: var(--tui-text-03);
+    background: var(--tui-elevation-01);
+  }
 }
+
 
 .w{
     color: #bc8587;
