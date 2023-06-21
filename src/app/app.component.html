@@ -1,4 +1,5 @@
 <tui-root>
+  <tui-sheets-host ngProjectAs="tuiOverContent"></tui-sheets-host>
   <div class="page">
     <div class="header">
       <div class="head">
@@ -8,19 +9,32 @@
         <a>
           <span class="w">W</span>
           <span class="ed">eddingday</span>
+
         </a>
+        <tui-svg src="tuiIconMenuLarge" *ngIf="mobile" (click)="toggle()"></tui-svg>
         <!-- <button tuiButton appearance="outline">Оставить заявку</button> -->
       </div>
       <div class="br"></div>
       <div class="nav">
-        <tui-tabs>
+        <tui-tabs *ngIf="!mobile">
           <a tuiTab href="#about">О салоне</a>
           <a tuiTab href="#catalog">Каталог</a>
           <a tuiTab href="#service">Услуги</a>
-          <!-- <a tuiTab href="">Отзывы</a> -->
+
           <a tuiTab href="#pay_del">Доставка и оплата</a>
           <a tuiTab href="#contacts">Контакты</a>
         </tui-tabs>
+
+        <ng-template  [(tuiSheet)]="open" [tuiSheetOptions]="options">
+          <tui-tabs class="mobileTabs" vertical="right">
+            <a tuiTab href="#about">О салоне</a>
+            <a tuiTab href="#catalog">Каталог</a>
+            <a tuiTab href="#service">Услуги</a>
+            <!-- <a tuiTab href="">Отзывы</a> -->
+            <a tuiTab href="#pay_del">Доставка и оплата</a>
+            <a tuiTab href="#contacts">Контакты</a>
+          </tui-tabs>
+        </ng-template>
       </div>
     </div>
     <div class="content">

@@ -24,6 +24,12 @@ tui-tabs{
       box-shadow: none;
     }
 }
+.mobileTabs{
+  box-shadow: none;
+    ::ng-deep.t-underline{
+      box-shadow: none;
+    }
+}
 
 .w{
     color: #bc8587;
@@ -381,47 +387,65 @@ tui-tabs{
 }
 
 @media(max-width: 425px){
-    .t-1{
-        font-size: 38px;
-    }
-    .t-2{
-        font-size: 40px;
-    }
-    .about{
-        flex-direction: column;
-        gap:100px;
-    }
-    .about-l{
-        width: 100%;
-    }
-    .services{
-        height: 100%;
-    }
-    .s-d{
-        flex-direction: column;
-    }
-    .items{
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-    .catalog-item{
-        width: 100%;
-    }
-    .pay_delivery{
-        padding: 50px 30px 30px 30px;
-    }
-    .pay-item{
-        flex-direction: column;
-        width: 100%;
-    }
+  .title{
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-position: center center;
+    padding: 20px 20px;
+    height: 100%;
+  }
+  .inf-t{
+    margin-left: 0px;
+    width: 100%;
+  }
+  .t-1{
+      font-size: 38px;
+  }
+  .t-2{
+      font-size: 40px;
+  }
+  .about{
+      flex-direction: column;
+      gap:100px;
+  }
+  .about-l{
+      width: 100%;
+      margin-right: 0px;
+  }
+  .about-r{
+    width: 100%;
+  }
+  .services{
+      height: 100%;
+  }
+  .s-d{
+      flex-direction: column;
+  }
+  .f-d{
+    flex-direction: column;
+  }
+  .items{
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+  .catalog-item{
+      width: 100%;
+  }
+  .pay_delivery{
+      padding: 50px 30px 30px 30px;
+  }
+  .pay-item{
+      flex-direction: column;
+      width: 100%;
+  }
 
-    .delivery{
-        width: 100vw;
-    }
-    .pay{
-        width: 100%;
-    }
-    .pay-t{
-        font-size: 40px;
-    }
+  .delivery{
+      width: 72%
+  }
+  .pay{
+      width: 72%;
+  }
+  .pay-t{
+      font-size: 40px;
+  }
 }
