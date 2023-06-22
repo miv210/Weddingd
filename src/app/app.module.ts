@@ -6,7 +6,9 @@ import {TuiButtonModule,
 import {TuiTabsModule,
   TuiInputModule,
   TuiTextAreaModule} from '@taiga-ui/kit';
-  import {TuiTextfieldControllerModule} from '@taiga-ui/core';
+import {TuiTextfieldControllerModule,
+  TuiSvgModule} from '@taiga-ui/core';
+import {TuiSheetModule} from '@taiga-ui/addon-mobile';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -27,7 +29,9 @@ import { DialogWindowComponent } from './components/dialog-window/dialog-window.
     TuiInputModule,
     ReactiveFormsModule,
     TuiTextfieldControllerModule,
-    TuiTextAreaModule
+    TuiTextAreaModule,
+    TuiSheetModule,
+    TuiSvgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

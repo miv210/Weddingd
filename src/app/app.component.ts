@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject, Injector} from '@angular/core';
+import { Component, OnInit, Inject, Injector, HostListener} from '@angular/core';
 import {TuiDialogContext, TuiDialogService} from '@taiga-ui/core';
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 import { DialogWindowComponent } from './components/dialog-window/dialog-window.component';
+import {TuiSheetOptions} from '@taiga-ui/addon-mobile';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +14,40 @@ export class AppComponent implements OnInit{
 
   catalogItems: Array<any>;
   serviceItems: Array<any>;
-
+  maxWidth: any;
   money = 1000;
+  mobile: boolean;
+  open = false;
 
   constructor(
     @Inject(TuiDialogService) private readonly dialogs: TuiDialogService,
     @Inject(Injector) private readonly injector: Injector,
     ) {}
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    event.target.innerWidth;
+    const query = '(max-width: 425px)';
+    this.maxWidth= window.matchMedia(query);
+    this.mobile = this.maxWidth.matches;
+  }
+
+
+  readonly options: Partial<TuiSheetOptions> = {
+      overlay: true,
+  };
+
+  toggle(): void {
+      this.open = !this.open;
+  }
+
   ngOnInit(): void {
+
+    const query = '(max-width: 425px)';
+    this.maxWidth= window.matchMedia(query);
+    this.mobile = this.maxWidth.matches;
+    // return mediaQueryList.matches;
+
     this.catalogItems = [
       {
         img: '../assets/images/item_1.jpg',
