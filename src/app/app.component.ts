@@ -101,5 +101,7 @@ export class AppComponent implements OnInit{
 
   withdraw(): void {
     this.money -= 100;
-}
+  }
+
+  
 }
