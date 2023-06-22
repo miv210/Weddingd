@@ -19,11 +19,16 @@ export class DialogWindowComponent implements OnInit{
   ) {}
 
   async submit(){
-    let form = document.getElementById(
-      'form'
-    ) ;
-    // let formData = new FormData(form)
-    // await fetch('sendmail.php',{method: 'POST', body: new FormData(form)})
+    let form = document.querySelector(
+      'form');
+    let formData = new FormData();
+    formData.append('email',this.form1.get('email').value);
+    formData.append('numberPhone', this.form1.get('numberPhone').value);
+    formData.append('message', this.form1.get('description').value);
+    formData.append('price', this.price.toString());
+    formData.append('numberItem', this.numberItem.toString());
+    await fetch('../../../sendmail.php',{method: 'POST', body: formData})
+    this.context.completeWith('');
   }
 
   ngOnInit(){

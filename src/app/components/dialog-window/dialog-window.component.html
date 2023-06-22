@@ -1,10 +1,10 @@
 <div class="div-template">
   <span>Номер платья #{{numberItem}}</span>
   <span>Стоимость платья {{price}} р.</span>
-  <form class="form-order" id="form" action="#">
+  <form class="form-order" [formGroup]="form1" id="formId" action="#">
     <tui-input
       tuiTextfieldSize="m"
-      formControlName="testValue"
+      formControlName="email"
       [tuiTextfieldLabelOutside]="true"
   >
       Введите почту
@@ -15,7 +15,7 @@
   </tui-input>
   <tui-input
       tuiTextfieldSize="m"
-      formControlName="testValue"
+      formControlName="numberPhone"
       [tuiTextfieldLabelOutside]="true"
   >
       Введите номер телефона
@@ -25,13 +25,14 @@
       />
   </tui-input>
   <tui-text-area
-          formControlName="testValue2"
+          formControlName="description"
           [expandable]="true"
       >
           Описание
       </tui-text-area>
   </form>
   <div style="display: flex; justify-content: end;">
-    <button tuiButton class="c-bttn">Оформить заказ</button>
+    <button tuiButton class="c-bttn" (click)="submit()">Оформить заказ</button>
+
   </div>
 </div>
